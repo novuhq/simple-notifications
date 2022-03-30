@@ -1,0 +1,71 @@
+<html>
+    <head>
+        <title>Hello</title>
+        <script src="https://cdn.socket.io/4.4.1/socket.io.min.js" integrity="sha384-fKnu0iswBIqkjxrhQCTZ7qlLHOFEgNkRmK2vaO/LbTZSXdJfAu6ewRBdwHPhBo/H" crossorigin="anonymous"></script>
+        <script>
+            window.addEventListener('load', function () {
+                const element = document.querySelector('#renderMessages');
+                const badge = document.querySelector('#badge');
+                const bell = document.querySelector('.bell');
+                let messages = [];
+
+
+                const socket = io('localhost:3000', {
+                    transports: ['websocket'],
+                    query: 'id=5'
+                });
+
+                function renderMessages(values) {
+                    for (const value of values) {
+                        messages.push(value);
+                        const newElement = document.createElement('div');
+                        newElement.innerText = value.message;
+                        element.appendChild(newElement);
+                        badge.innerText = messages.length;
+                    }
+                }
+
+                socket.on('messages', function (values) {
+                    renderMessages(values);
+                });
+
+                bell.addEventListener('click', function () {
+                    element.style.display = element.style.display === 'block' ? 'none' : 'block';
+                });
+            });
+        </script>
+        <style>
+            .bell {
+                background: gray;
+                width: 50px;
+                height: 50px;
+                border-radius: 10px;
+            }
+            #badge {
+                background: red;
+                border-radius: 100%;
+                width: 20px;
+                height: 20px;
+                color: white;
+                margin-top: 5px;
+                margin-left: 5px;
+                float: left;
+            }
+            #renderMessages {
+                width: 200px;
+                background: #efefef;
+                border: 1px solid gray;
+            }
+            #renderMessages div {
+                padding: 10px;
+                border-bottom: 1px solid gray;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="bell">
+            <div id="badge"></div>
+        </div>
+        <div id="renderMessages" style="display: none"></div>
+    </body>
+</html>
