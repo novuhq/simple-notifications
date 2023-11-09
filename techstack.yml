@@ -1,0 +1,65 @@
+repo_name: novuhq/simple-notifications
+report_id: f52423b75088a20a40a4ecd20a94e398
+repo_type: Public
+timestamp: '2023-11-09T15:11:44+00:00'
+requested_by: nevo-david
+provider: github
+branch: main
+detected_tools_count: 5
+tools:
+- name: JavaScript
+  description: Lightweight, interpreted, object-oriented language with first-class
+    functions
+  website_url: https://developer.mozilla.org/en-US/docs/Web/JavaScript
+  open_source: true
+  hosted_saas: false
+  category: Languages & Frameworks
+  sub_category: Languages
+  image_url: https://img.stackshare.io/service/1209/javascript.jpeg
+  detection_source: Repo Metadata
+- name: Socket.IO
+  description: Realtime application framework (Node.JS server)
+  website_url: http://socket.io/
+  version: 4.4.1
+  open_source: true
+  hosted_saas: false
+  category: Application Hosting
+  sub_category: Realtime Backend / API
+  image_url: https://img.stackshare.io/service/1161/vI0ZZlhZ_400x400.png
+  detection_source_url: backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2022-03-30 07:48:04.000000000 Z
+- name: Git
+  description: Fast, scalable, distributed revision control system
+  website_url: http://git-scm.com/
+  open_source: true
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Version Control System
+  image_url: https://img.stackshare.io/service/1046/git.png
+  detection_source: Repo Metadata
+- name: npm
+  description: The package manager for JavaScript.
+  website_url: https://www.npmjs.com/
+  open_source: false
+  hosted_saas: false
+  category: Build, Test, Deploy
+  sub_category: Front End Package Manager
+  image_url: https://img.stackshare.io/service/1120/lejvzrnlpb308aftn31u.png
+  detection_source: backend/package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2022-03-30 07:48:04.000000000 Z
+- name: http
+  package_url: https://www.npmjs.com/http
+  version: 0.0.1
+  license: BSD-2-Clause
+  open_source: true
+  hosted_saas: false
+  category: Libraries
+  sub_category: npm Packages
+  image_url: https://img.stackshare.io/package/16874/default_768abdabb94806c932ace6262b6bbc8241907245.png
+  detection_source_url: backend/package-lock.json
+  detection_source: backend/package.json
+  last_updated_by: Nevo David
+  last_updated_on: 2022-03-30 07:48:04.000000000 Z
